@@ -1,9 +1,9 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app',
-    template: '<h1>Fitness Tracker</h1>'
+    template: '<h1>Fitness Tracker</h1>',
 })
 export class AppComponent { 
-  title = "";
+  private title: string = "Fitness Tracker";
 }
