@@ -15,9 +15,6 @@ var AppComponent = (function () {
         this.dietService = dietService;
         this.title = "Fitness Tracker";
     }
-    AppComponent.prototype.retrieveTitle = function () {
-        return this.dietService.getTitle();
-    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app',

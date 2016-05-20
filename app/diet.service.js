@@ -9,12 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var meal_model_1 = require('./meal.model');
 var DietService = (function () {
     function DietService() {
-        this.title = "Diet Service";
+        this.diet_data = [];
     }
-    DietService.prototype.getTitle = function () {
-        return this.title;
+    DietService.prototype.addMeal = function (protein, carbs, fat) {
+        var meal = new meal_model_1.Meal(protein, carbs, fat);
+        this.diet_data.push(meal);
+        return meal;
     };
     DietService = __decorate([
         core_1.Injectable(), 

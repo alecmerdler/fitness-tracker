@@ -12,8 +12,4 @@ export class AppComponent {
   constructor(private dietService: DietService) {
 
   }
-
-  public retrieveTitle(): string {
-    return this.dietService.getTitle();
-  }
 }

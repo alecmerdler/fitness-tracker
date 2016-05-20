@@ -14,24 +14,25 @@ import {
   injectAsync
 } from '@angular/core/testing';
 
+// Mock service
+class MockDietService extends DietService {
+
+	getTitle() {
+		return "Diet Service";
+	}
+}
+
+
 describe('AppComponent', () => {
 	this.component;
 
   beforeEach(() => {
-    this.component = new AppComponent(new DietService());
+    this.component = new AppComponent(new MockDietService());
   });
 
 
   it("should initialize title to 'Fitness Tracker'", () => {
     expect(this.component.title).toEqual("Fitness Tracker");
   });
-
-
-	it("should retrieve title from service method", () => {
-		expect(this.component.retrieveTitle()).toEqual("Diet Service");
-	});
-
-
-
 
 });

@@ -12,8 +12,20 @@ testing_1.describe("DietService", function () {
     testing_1.beforeEach(testing_1.inject([core_1.Injector], function (injector) {
         service = injector.get(diet_service_1.DietService);
     }));
-    testing_1.it("should return title", function () {
-        testing_1.expect(service.getTitle()).toEqual("Diet Service");
+    testing_1.describe("initialization", function () {
+        testing_1.it("should initialize the diet data to empty", function () {
+            testing_1.expect(service.diet_data.length).toEqual(0);
+        });
+    });
+    testing_1.describe("addMeal", function () {
+        testing_1.it("should create a new Meal object and add to diet data array", function () {
+            service.addMeal(10, 10, 10);
+            testing_1.expect(service.diet_data.length).toEqual(1);
+        });
+        testing_1.it("should return the created meal", function () {
+            var meal = service.addMeal(10, 10, 10);
+            testing_1.expect(meal.protein).toEqual(10);
+        });
     });
 });
 //# sourceMappingURL=service.spec.js.map
