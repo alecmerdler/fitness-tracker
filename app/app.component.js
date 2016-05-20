@@ -9,16 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var diet_service_1 = require('./diet.service');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(dietService) {
+        this.dietService = dietService;
         this.title = "Fitness Tracker";
     }
+    AppComponent.prototype.retrieveTitle = function () {
+        return this.dietService.getTitle();
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app',
             template: '<h1>Fitness Tracker</h1>',
+            providers: [diet_service_1.DietService],
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [diet_service_1.DietService])
     ], AppComponent);
     return AppComponent;
 }());

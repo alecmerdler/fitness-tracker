@@ -15,5 +15,8 @@ testing_1.describe("DietService", function () {
     testing_1.it("should initialize title", function () {
         testing_1.expect(service.title).toEqual("Diet Service");
     });
+    testing_1.it("should return title", function () {
+        testing_1.expect(service.getTitle()).toEqual("Diet Service");
+    });
 });
 //# sourceMappingURL=service.spec.js.map

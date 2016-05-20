@@ -13,6 +13,9 @@ var DietService = (function () {
     function DietService() {
         this.title = "Diet Service";
     }
+    DietService.prototype.getTitle = function () {
+        return this.title;
+    };
     DietService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])

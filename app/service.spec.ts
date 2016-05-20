@@ -14,19 +14,24 @@ import {
 } from '@angular/core/testing';
 
 describe("DietService", () => {
-  let service: any;
+  let service: DietService;
 
   beforeEachProviders(() => [
     DietService
   ]);
 
-  beforeEach(inject([Injector], (injector: any) => {
+  beforeEach(inject([Injector], (injector: Injector) => {
     service = injector.get(DietService);
   }));
 
 
   it("should initialize title", () => {
     expect(service.title).toEqual("Diet Service");
+  });
+
+
+  it("should return title", () => {
+    expect(service.getTitle()).toEqual("Diet Service");
   });
 
 
