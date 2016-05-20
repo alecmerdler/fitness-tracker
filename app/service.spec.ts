@@ -25,11 +25,6 @@ describe("DietService", () => {
   }));
 
 
-  it("should initialize title", () => {
-    expect(service.title).toEqual("Diet Service");
-  });
-
-
   it("should return title", () => {
     expect(service.getTitle()).toEqual("Diet Service");
   });

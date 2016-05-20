@@ -15,14 +15,11 @@ import {
 } from '@angular/core/testing';
 
 describe('AppComponent', () => {
+	this.component;
 
   beforeEach(() => {
-    this.component = new AppComponent();
+    this.component = new AppComponent(new DietService());
   });
-
-  beforeEachProviders(() => []
-    provide(DietService, {useClass: DietService});
-  ]);
 
 
   it("should initialize title to 'Fitness Tracker'", () => {
@@ -30,12 +27,11 @@ describe('AppComponent', () => {
   });
 
 
-  it("should retrieve title from service", () => {
-    expect(this.component.retrieveTitle()).toEqual("Diet Service");
-  });
+	it("should retrieve title from service method", () => {
+		expect(this.component.retrieveTitle()).toEqual("Diet Service");
+	});
+
+
 
 
 });
-
-
-
