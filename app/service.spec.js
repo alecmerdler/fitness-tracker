@@ -25,6 +25,8 @@ testing_1.describe("DietService", function () {
         testing_1.it("should return the created meal", function () {
             var meal = service.addMeal(10, 10, 10);
             testing_1.expect(meal.protein).toEqual(10);
+            testing_1.expect(meal.carbs).toEqual(10);
+            testing_1.expect(meal.fat).toEqual(10);
         });
     });
 });

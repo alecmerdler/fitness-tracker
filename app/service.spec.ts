@@ -48,7 +48,10 @@ describe("DietService", () => {
 			var meal: Meal = service.addMeal(10, 10, 10);
 
 			expect(meal.protein).toEqual(10);
+			expect(meal.carbs).toEqual(10);
+			expect(meal.fat).toEqual(10);
 		});
+		
 	});
 
 

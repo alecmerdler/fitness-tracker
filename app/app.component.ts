@@ -9,7 +9,5 @@ import { DietService } from './diet.service';
 export class AppComponent {
   private title: string = "Fitness Tracker";
 
-  constructor(private dietService: DietService) {
-
-  }
+  constructor() { }
 }

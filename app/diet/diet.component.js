@@ -9,20 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var diet_service_1 = require('./diet.service');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = "Fitness Tracker";
+var DietComponent = (function () {
+    function DietComponent() {
+        this.title = "Diet Component";
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'app',
-            template: '<h1>Fitness Tracker</h1>',
-            providers: [diet_service_1.DietService],
-        }), 
+    DietComponent = __decorate([
+        core_1.Component({}), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], DietComponent);
+    return DietComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.DietComponent = DietComponent;
+//# sourceMappingURL=diet.component.js.map

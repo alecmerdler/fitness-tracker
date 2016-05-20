@@ -24,7 +24,7 @@ var MockDietService = (function (_super) {
 testing_1.describe('AppComponent', function () {
     _this.component;
     testing_1.beforeEach(function () {
-        _this.component = new app_component_1.AppComponent(new MockDietService());
+        _this.component = new app_component_1.AppComponent();
     });
     testing_1.it("should initialize title to 'Fitness Tracker'", function () {
         testing_1.expect(_this.component.title).toEqual("Fitness Tracker");

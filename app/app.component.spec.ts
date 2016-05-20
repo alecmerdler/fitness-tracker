@@ -27,7 +27,7 @@ describe('AppComponent', () => {
 	this.component;
 
   beforeEach(() => {
-    this.component = new AppComponent(new MockDietService());
+    this.component = new AppComponent();
   });
 
 
