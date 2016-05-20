@@ -8,18 +8,10 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
     plugins: [
       require('karma-jasmine'),
-      require('karma-chrome-launcher'),
+      require('karma-phantomjs-launcher'),
       require('karma-htmlfile-reporter')
     ],
 
-    customLaunchers: {
-      // From the CLI. Not used here but interesting
-      // chrome setup for travis CI using chromium
-      Chrome_travis_ci: {
-        base: 'Chrome',
-        flags: ['--no-sandbox']
-      }
-    },
     files: [
       // System.js for module loading
       'node_modules/systemjs/dist/system-polyfills.js',
@@ -66,7 +58,7 @@ module.exports = function(config) {
 
     exclude: [],
     preprocessors: {},
-    reporters: ['progress', 'html'],
+    reporters: ['dots', 'html'],
 
     // HtmlReporter configuration
     htmlReporter: {
@@ -82,7 +74,7 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
     singleRun: false
   })
 }
