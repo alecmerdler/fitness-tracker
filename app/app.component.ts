@@ -7,7 +7,17 @@ import { DietService } from './diet/diet.service';
     providers: [DietService],
 })
 export class AppComponent {
+
+	/**************************************************************
+	*													Attributes
+	**************************************************************/
+
   private title: string = "Fitness Tracker";
+
+
+	/**************************************************************
+	*													Methods
+	**************************************************************/
 
   constructor() { }
 }

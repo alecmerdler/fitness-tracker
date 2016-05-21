@@ -11,7 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var diet_service_1 = require('./diet/diet.service');
 var AppComponent = (function () {
+    /**************************************************************
+    *													Methods
+    **************************************************************/
     function AppComponent() {
+        /**************************************************************
+        *													Attributes
+        **************************************************************/
         this.title = "Fitness Tracker";
     }
     AppComponent = __decorate([

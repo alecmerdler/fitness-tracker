@@ -12,11 +12,11 @@ var core_1 = require('@angular/core');
 var meal_model_1 = require('./meal.model');
 var DietService = (function () {
     function DietService() {
-        this.diet_data = [];
+        this.meal_list = [];
     }
-    DietService.prototype.addMeal = function (protein, carbs, fat) {
-        var meal = new meal_model_1.Meal(protein, carbs, fat);
-        this.diet_data.push(meal);
+    DietService.prototype.addMeal = function (name, protein, carbs, fat) {
+        var meal = new meal_model_1.Meal(name, protein, carbs, fat);
+        this.meal_list.push(meal);
         return meal;
     };
     DietService = __decorate([

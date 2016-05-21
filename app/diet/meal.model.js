@@ -1,6 +1,10 @@
 "use strict";
 var Meal = (function () {
-    function Meal(protein, carbs, fat) {
+    /**************************************************************
+    *													Methods
+    **************************************************************/
+    function Meal(name, protein, carbs, fat) {
+        this.name = name;
         this.protein = protein;
         this.carbs = carbs;
         this.fat = fat;

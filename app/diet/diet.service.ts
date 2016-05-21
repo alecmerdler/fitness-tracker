@@ -3,17 +3,20 @@ import { Meal } from './meal.model';
 
 @Injectable()
 export class DietService {
-	public diet_data: Array<Meal>;
+	public meal_list: Array<Meal>;
 
 	constructor() {
-		this.diet_data = [];
+		this.meal_list = [];
 	}
 
 
-	public addMeal(protein: number, carbs: number, fat: number) {
-		var meal = new Meal(protein, carbs, fat);
-		this.diet_data.push(meal);
+	public addMeal(name: string, protein: number, carbs: number, fat: number) {
+		var meal = new Meal(name, protein, carbs, fat);
+		this.meal_list.push(meal);
 
 		return meal;
 	}
+
+
+
 }
