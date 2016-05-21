@@ -48,6 +48,7 @@ describe("DietService", () => {
 		it("should return the created meal", () => {
 			var meal: Meal = service.addMeal("Tacos", 10, 10, 10);
 
+			expect(meal.name).toEqual("Tacos");
 			expect(meal.protein).toEqual(10);
 			expect(meal.carbs).toEqual(10);
 			expect(meal.fat).toEqual(10);
@@ -60,7 +61,35 @@ describe("DietService", () => {
 	describe("removeMeal", () => {
 
 		it("should remove the last meal entered", () => {
-			service.meal_list = [new Meal("Tacos", 10, 10, 10), new Meal("Carnitas", 20, 20, 20)];
+			let taco: Meal = new Meal("Tacos", 10, 10, 10);
+			let carnitas: Meal = new Meal("Carnitas", 20, 20, 20);
+			service.meal_list = [taco, carnitas];
+			service.removeMeal();
+
+			expect(service.meal_list.length).toEqual(1);
+			expect(service.meal_list[0]).toEqual(taco);
+		});
+	});
+
+
+
+	describe("totalCalories", () => {
+
+		// Attempt at random unit testing
+		it("should return the sum of all meal calories in meal list", () => {
+			let expected_calories: number = 0;
+			let num_tests: number = Math.floor(Math.random() * (25));
+
+			for (let i: number = 0; i < num_tests; i++) {
+				let protein: number = Math.floor(Math.random() * (1000));
+				let carbs: number = Math.floor(Math.random() * (1000));
+				let fat: number = Math.floor(Math.random() * (1000));
+
+				service.meal_list.push(new Meal("tacos" + [i], protein, carbs, fat));
+				expected_calories += (protein * 4) + (carbs * 4) + (fat * 9);
+			}
+
+			expect(service.totalCalories()).toEqual(expected_calories);
 		});
 	});
 

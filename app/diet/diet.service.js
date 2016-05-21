@@ -19,6 +19,16 @@ var DietService = (function () {
         this.meal_list.push(meal);
         return meal;
     };
+    DietService.prototype.removeMeal = function () {
+        this.meal_list.splice(this.meal_list.length - 1, 1);
+    };
+    DietService.prototype.totalCalories = function () {
+        var total_calories = 0;
+        this.meal_list.forEach(function (meal) {
+            total_calories += meal.calories();
+        });
+        return total_calories;
+    };
     DietService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])

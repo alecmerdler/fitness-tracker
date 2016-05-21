@@ -9,16 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var diet_service_1 = require('./diet.service');
 var DietComponent = (function () {
     /**************************************************************
     *													Methods
     **************************************************************/
-    function DietComponent() {
+    function DietComponent(dietService) {
+        this.dietService = dietService;
         this.title = "Diet Component";
     }
+    DietComponent.prototype.addMeal = function (name, protein, carbs, fat) {
+        this.dietService.addMeal(name, protein, carbs, fat);
+    };
     DietComponent = __decorate([
-        core_1.Component({}), 
-        __metadata('design:paramtypes', [])
+        core_1.Component({
+            providers: [diet_service_1.DietService]
+        }), 
+        __metadata('design:paramtypes', [diet_service_1.DietService])
     ], DietComponent);
     return DietComponent;
 }());

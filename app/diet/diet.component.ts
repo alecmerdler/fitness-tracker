@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
+import { DietService } from './diet.service';
 
-@Component({})
+@Component({
+	providers: [DietService]
+})
 export class DietComponent {
 
 	/**************************************************************
 	*													Attributes
 	**************************************************************/
-	
-	private title: string;
+
+	public title: string;
 
 
 
@@ -15,7 +18,12 @@ export class DietComponent {
 	*													Methods
 	**************************************************************/
 
-	constructor() {
+	constructor(private dietService: DietService) {
 		this.title = "Diet Component";
+	}
+
+
+	public addMeal(name: string, protein: number, carbs: number, fat: number) {
+		this.dietService.addMeal(name, protein, carbs, fat);
 	}
 }
