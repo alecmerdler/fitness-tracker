@@ -15,6 +15,7 @@ export class DietComponent implements OnInit {
 
 	public title: string;
 	public meal_list: Array<Meal>;
+	public new_meal: Meal;
 
 
 
@@ -30,13 +31,16 @@ export class DietComponent implements OnInit {
 	ngOnInit() {
 		this.title = "Diet Component";
 		this.meal_list = this.dietService.getMealList();
+		this.new_meal = new Meal(null, null, null, null);
 	}
 
 
-	public addMeal(name: string, protein: number, carbs: number, fat: number) {
-		let new_meal = this.dietService.addMeal(name, protein, carbs, fat);
+	public addMeal() {
 
-		return new_meal;
+		let new_meal = this.dietService.addMeal(this.new_meal.name, this.new_meal.protein, this.new_meal.carbs, this.new_meal.fat);
+
+		this.new_meal = new Meal(null, null, null, null);
+
 	}
 
 

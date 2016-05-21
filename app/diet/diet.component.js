@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var diet_service_1 = require('./diet.service');
+var meal_model_1 = require('./meal.model');
 var DietComponent = (function () {
     /**************************************************************
     *													Methods
@@ -20,10 +21,11 @@ var DietComponent = (function () {
     DietComponent.prototype.ngOnInit = function () {
         this.title = "Diet Component";
         this.meal_list = this.dietService.getMealList();
+        this.new_meal = new meal_model_1.Meal(null, null, null, null);
     };
-    DietComponent.prototype.addMeal = function (name, protein, carbs, fat) {
-        var new_meal = this.dietService.addMeal(name, protein, carbs, fat);
-        return new_meal;
+    DietComponent.prototype.addMeal = function () {
+        var new_meal = this.dietService.addMeal(this.new_meal.name, this.new_meal.protein, this.new_meal.carbs, this.new_meal.fat);
+        this.new_meal = new meal_model_1.Meal(null, null, null, null);
     };
     DietComponent.prototype.removeMeal = function () {
         this.dietService.removeMeal();

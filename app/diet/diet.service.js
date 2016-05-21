@@ -15,7 +15,8 @@ var DietService = (function () {
     *													Methods
     **************************************************************/
     function DietService() {
-        this.meal_list = [new meal_model_1.Meal("tacos", 10, 10, 10)];
+        // this.meal_list = [new Meal("tacos", 10, 10, 10)];
+        this.meal_list = [];
     }
     DietService.prototype.getMealList = function () {
         return this.meal_list;

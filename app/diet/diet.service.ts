@@ -17,7 +17,8 @@ export class DietService {
 	**************************************************************/
 
 	constructor() {
-		this.meal_list = [new Meal("tacos", 10, 10, 10)];
+		// this.meal_list = [new Meal("tacos", 10, 10, 10)];
+		this.meal_list = [];
 	}
 
 

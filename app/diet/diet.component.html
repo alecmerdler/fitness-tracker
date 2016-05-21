@@ -1,7 +1,9 @@
 <div class="panel panel-default">
+
 	<div class="panel-heading">
 		<h2>{{ title }}</h2>
 	</div>
+
 	<div class="panel-body">
 		<ul class="list-group">
 			<li
@@ -14,5 +16,83 @@
 				{{ meal.name }}
 			</li>
 		</ul>
+
+		<button
+			type="submit"
+			class="btn btn-success"
+			(click)="addMeal()">
+			Add
+		</button>
+
+		<form class="form-horizontal">
+
+			<div class="form-group col-md-12">
+				<label
+					class="col-md-2 control-label"
+					for="name">
+					Name
+				</label>
+				<div class="col-md-4">
+					<input
+						id="name" class="form-control" type="text" required
+						placeholder="ex. Tacos"
+						ngControl="name"
+						[(ngModel)]="new_meal.name">
+				</div>
+			</div>
+
+			<br>
+
+			<div class="form-group col-md-12">
+				<label
+					class="col-md-2 control-label"
+					for="protein">
+					Protein
+				</label>
+				<div class="col-md-4">
+					<input
+						id="protein" class="form-control" type="text" required
+						placeholder="0"
+						ngControl="protein"
+						[(ngModel)]="new_meal.protein">
+				</div>
+			</div>
+
+			<br>
+
+			<div class="form-group col-md-12">
+				<label
+					class="col-md-2 control-label"
+					for="carbs">
+					Carbs
+				</label>
+				<div class="col-md-4">
+					<input
+						id="carbs" class="form-control" type="text" required
+						placeholder="0"
+						ngControl="carbs"
+						[(ngModel)]="new_meal.carbs">
+				</div>
+			</div>
+
+			<br>
+
+			<div class="form-group col-md-12">
+				<label
+					class="col-md-2 control-label"
+					for="fat">
+					Fat
+				</label>
+				<div class="col-md-4">
+					<input
+						id="fat" class="form-control" type="text" required
+						placeholder="0"
+						ngControl="fat"
+						[(ngModel)]="new_meal.fat">
+				</div>
+			</div>
+
+		</form>
+
 	</div>
 </div>
