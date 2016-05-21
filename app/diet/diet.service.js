@@ -14,6 +14,9 @@ var DietService = (function () {
     function DietService() {
         this.meal_list = [];
     }
+    DietService.prototype.getMealList = function () {
+        return this.meal_list;
+    };
     DietService.prototype.addMeal = function (name, protein, carbs, fat) {
         var meal = new meal_model_1.Meal(name, protein, carbs, fat);
         this.meal_list.push(meal);

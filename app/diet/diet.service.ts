@@ -10,6 +10,11 @@ export class DietService {
 	}
 
 
+	public getMealList(): Array<Meal> {
+		return this.meal_list;
+	}
+
+
 	public addMeal(name: string, protein: number, carbs: number, fat: number): Meal {
 		var meal = new Meal(name, protein, carbs, fat);
 		this.meal_list.push(meal);

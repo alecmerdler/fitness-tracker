@@ -18,6 +18,12 @@ testing_1.describe("DietService", function () {
             testing_1.expect(service.meal_list.length).toEqual(0);
         });
     });
+    testing_1.describe("getMealList", function () {
+        testing_1.it("should return the meal list", function () {
+            var result = service.getMealList();
+            testing_1.expect(result).toBeDefined();
+        });
+    });
     testing_1.describe("addMeal", function () {
         testing_1.it("should create a new Meal object and add to diet data array", function () {
             service.addMeal("Tacos", 10, 10, 10);

@@ -26,12 +26,24 @@ describe("DietService", () => {
   }));
 
 
+
 	describe("initialization", () => {
 
 		it("should initialize the diet data to empty", () => {
 			expect(service.meal_list.length).toEqual(0);
 		});
 
+	});
+
+
+
+	describe("getMealList", () => {
+
+		it("should return the meal list", () => {
+			var result = service.getMealList();
+
+			expect(result).toBeDefined();
+		});
 	});
 
 

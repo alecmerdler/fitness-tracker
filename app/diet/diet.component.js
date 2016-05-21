@@ -16,10 +16,17 @@ var DietComponent = (function () {
     **************************************************************/
     function DietComponent(dietService) {
         this.dietService = dietService;
-        this.title = "Diet Component";
     }
+    DietComponent.prototype.ngOnInit = function () {
+        this.title = "Diet Component";
+        this.meal_list = this.dietService.getMealList();
+    };
     DietComponent.prototype.addMeal = function (name, protein, carbs, fat) {
-        this.dietService.addMeal(name, protein, carbs, fat);
+        var new_meal = this.dietService.addMeal(name, protein, carbs, fat);
+        return new_meal;
+    };
+    DietComponent.prototype.removeMeal = function () {
+        this.dietService.removeMeal();
     };
     DietComponent = __decorate([
         core_1.Component({

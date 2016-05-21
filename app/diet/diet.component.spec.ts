@@ -22,21 +22,36 @@ describe("DietComponent", () => {
 	let dietServiceMock: DietService;
 
 
-	beforeEach(() => {
-		dietServiceMock = new DietService();
+	// Mock service instance
+	class DietServiceMock extends DietService {
 
-		spyOn(dietServiceMock, "addMeal").and.callThrough();
-	});
+	}
 
 	beforeEach(() => {
+		dietServiceMock = new DietServiceMock();
 		component = new DietComponent(dietServiceMock);
+
+		spyOn(dietServiceMock, "getMealList").and.callThrough();
+		spyOn(dietServiceMock, "addMeal").and.callThrough();
+		spyOn(dietServiceMock, "removeMeal").and.callThrough();
 	});
 
 
-	describe("initialization", () => {
 
-		it("should set title to 'Diet Component'", () => {
+	describe("ngOnInit", () => {
+
+		it("should initialize attributes", () => {
+			component.ngOnInit();
+
 			expect(component.title).toEqual("Diet Component");
+			expect(component.meal_list).toBeDefined();
+		});
+
+
+		it("should call service to initialize meal list", () => {
+			component.ngOnInit();
+
+			expect(dietServiceMock.getMealList).toHaveBeenCalled();
 		});
 	});
 
@@ -44,10 +59,28 @@ describe("DietComponent", () => {
 
 	describe("addMeal", () => {
 
-		it("should call service", () => {
+		it("should call service to add meal", () => {
 			component.addMeal("tacos", 10, 10, 10);
 
 			expect(dietServiceMock.addMeal).toHaveBeenCalled();
+		});
+
+
+		it("should return created meal", () => {
+			let result = component.addMeal("tacos", 10, 10, 10);
+
+			expect(result.name).toEqual("tacos");
+		});
+	});
+
+
+
+	describe("removeMeal", () => {
+
+		it("should call service to remove last meal", () => {
+			component.removeMeal();
+
+			expect(dietServiceMock.removeMeal).toHaveBeenCalled();
 		});
 	});
 

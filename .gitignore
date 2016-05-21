@@ -2,3 +2,7 @@
 /dist/
 /npm-debug.log
 /typings/
+
+# Compiled JS
+/app/**/*.js
+/app/**/*.js.map
