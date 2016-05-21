@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 import { AppComponent } from './app.component';
 import { provide } from '@angular/core';
-import { DietService } from './diet.service';
+import { DietService } from './diet/diet.service';
 
 // Angular2-specific wrappers for Jasmine functions
 import {

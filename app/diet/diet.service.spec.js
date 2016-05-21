@@ -30,4 +30,4 @@ testing_1.describe("DietService", function () {
         });
     });
 });
-//# sourceMappingURL=service.spec.js.map
+//# sourceMappingURL=diet.service.spec.js.map

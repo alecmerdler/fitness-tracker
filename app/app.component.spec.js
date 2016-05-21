@@ -7,7 +7,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 var _this = this;
 /* tslint:disable:no-unused-variable */
 var app_component_1 = require('./app.component');
-var diet_service_1 = require('./diet.service');
+var diet_service_1 = require('./diet/diet.service');
 // Angular2-specific wrappers for Jasmine functions
 var testing_1 = require('@angular/core/testing');
 // Mock service

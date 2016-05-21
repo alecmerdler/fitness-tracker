@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DietService } from './diet.service';
+import { DietService } from './diet/diet.service';
 
 @Component({
     selector: 'app',
