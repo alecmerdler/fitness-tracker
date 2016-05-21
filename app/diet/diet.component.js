@@ -30,6 +30,8 @@ var DietComponent = (function () {
     };
     DietComponent = __decorate([
         core_1.Component({
+            selector: 'diet-component',
+            templateUrl: "/app/diet/diet.component.html",
             providers: [diet_service_1.DietService]
         }), 
         __metadata('design:paramtypes', [diet_service_1.DietService])

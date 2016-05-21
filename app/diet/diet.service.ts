@@ -3,10 +3,21 @@ import { Meal } from './meal.model';
 
 @Injectable()
 export class DietService {
+
+	/**************************************************************
+	*													Attributes
+	**************************************************************/
+
 	public meal_list: Array<Meal>;
 
+
+
+	/**************************************************************
+	*													Methods
+	**************************************************************/
+
 	constructor() {
-		this.meal_list = [];
+		this.meal_list = [new Meal("tacos", 10, 10, 10)];
 	}
 
 

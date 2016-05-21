@@ -11,8 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var meal_model_1 = require('./meal.model');
 var DietService = (function () {
+    /**************************************************************
+    *													Methods
+    **************************************************************/
     function DietService() {
-        this.meal_list = [];
+        this.meal_list = [new meal_model_1.Meal("tacos", 10, 10, 10)];
     }
     DietService.prototype.getMealList = function () {
         return this.meal_list;

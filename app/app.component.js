@@ -10,21 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var diet_service_1 = require('./diet/diet.service');
+var diet_component_1 = require('./diet/diet.component');
 var AppComponent = (function () {
     /**************************************************************
     *													Methods
     **************************************************************/
     function AppComponent() {
-        /**************************************************************
-        *													Attributes
-        **************************************************************/
-        this.title = "Fitness Tracker";
     }
+    AppComponent.prototype.ngOnInit = function () {
+        this.title = "Fitness Tracker";
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app',
-            template: '<h1>Fitness Tracker</h1>',
+            templateUrl: '/app/app.component.html',
             providers: [diet_service_1.DietService],
+            directives: [diet_component_1.DietComponent],
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

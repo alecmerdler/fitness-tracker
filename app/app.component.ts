@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { DietService } from './diet/diet.service';
+import { DietComponent } from './diet/diet.component';
 
 @Component({
     selector: 'app',
-    template: '<h1>Fitness Tracker</h1>',
+    templateUrl: '/app/app.component.html',
     providers: [DietService],
+		directives: [DietComponent],
 })
 export class AppComponent {
 
@@ -12,12 +14,19 @@ export class AppComponent {
 	*													Attributes
 	**************************************************************/
 
-  private title: string = "Fitness Tracker";
+  public title: string;
 
 
 	/**************************************************************
 	*													Methods
 	**************************************************************/
 
-  constructor() { }
+  constructor() {
+
+	}
+
+
+	ngOnInit() {
+		this.title = "Fitness Tracker";
+	}
 }

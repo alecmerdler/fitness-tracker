@@ -3,6 +3,8 @@ import { DietService } from './diet.service';
 import { Meal } from './meal.model';
 
 @Component({
+	selector: 'diet-component',
+	templateUrl: "/app/diet/diet.component.html",
 	providers: [DietService]
 })
 export class DietComponent implements OnInit {
