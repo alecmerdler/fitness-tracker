@@ -15,10 +15,10 @@ var DietService = (function () {
     *													Methods
     **************************************************************/
     function DietService() {
-        // this.meal_list = [new Meal("tacos", 10, 10, 10)];
         this.meal_list = [];
     }
     DietService.prototype.getMealList = function () {
+        console.log(this.meal_list);
         return this.meal_list;
     };
     DietService.prototype.addMeal = function (name, protein, carbs, fat) {

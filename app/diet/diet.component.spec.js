@@ -40,15 +40,15 @@ testing_1.describe("DietComponent", function () {
         });
     });
     testing_1.describe("addMeal", function () {
-        testing_1.it("should not call service if fields are blank", function () {
-            component.new_meal = new meal_model_1.Meal(null, null, null, null);
-            component.addMeal();
-            testing_1.expect(dietServiceMock.addMeal).not.toHaveBeenCalled();
-        });
         testing_1.it("should call service to add meal", function () {
             component.new_meal = new meal_model_1.Meal("tacos", 10, 10, 10);
             component.addMeal();
             testing_1.expect(dietServiceMock.addMeal).toHaveBeenCalled();
+        });
+        testing_1.it("should retrieve the updated list from service", function () {
+            component.new_meal = new meal_model_1.Meal("tacos", 10, 10, 10);
+            component.addMeal();
+            testing_1.expect(dietServiceMock.getMealList).toHaveBeenCalled();
         });
         testing_1.it("should reset new meal attribute", function () {
             component.new_meal = new meal_model_1.Meal("tacos", 10, 10, 10);
@@ -57,6 +57,11 @@ testing_1.describe("DietComponent", function () {
             testing_1.expect(component.new_meal.protein).toEqual(null);
             testing_1.expect(component.new_meal.carbs).toEqual(null);
             testing_1.expect(component.new_meal.fat).toEqual(null);
+        });
+        testing_1.it("should set is_new attribute to false", function () {
+            component.new_meal = new meal_model_1.Meal("tacos", 10, 10, 10);
+            component.addMeal();
+            testing_1.expect(component.is_new).toEqual(false);
         });
     });
     testing_1.describe("removeMeal", function () {

@@ -17,12 +17,12 @@ export class DietService {
 	**************************************************************/
 
 	constructor() {
-		// this.meal_list = [new Meal("tacos", 10, 10, 10)];
 		this.meal_list = [];
 	}
 
 
 	public getMealList(): Array<Meal> {
+		console.log(this.meal_list);
 		return this.meal_list;
 	}
 

@@ -16,6 +16,7 @@ export class DietComponent implements OnInit {
 	public title: string;
 	public meal_list: Array<Meal>;
 	public new_meal: Meal;
+	public is_new: boolean;
 
 
 
@@ -32,6 +33,7 @@ export class DietComponent implements OnInit {
 		this.title = "Diet Component";
 		this.meal_list = this.dietService.getMealList();
 		this.new_meal = new Meal(null, null, null, null);
+		this.is_new = false;
 	}
 
 
@@ -40,7 +42,9 @@ export class DietComponent implements OnInit {
 		let new_meal = this.dietService.addMeal(this.new_meal.name, this.new_meal.protein, this.new_meal.carbs, this.new_meal.fat);
 
 		this.new_meal = new Meal(null, null, null, null);
+		this.is_new = false;
 
+		this.meal_list = this.dietService.getMealList();
 	}
 
 

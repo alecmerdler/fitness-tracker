@@ -9,22 +9,32 @@
 			<li
 				class="list-group-item"
 				*ngFor="let meal of meal_list">
+				{{ meal.name }}
 				<span class="badge">Protein: {{ meal.protein }}</span>
 				<span class="badge">Carbs: {{ meal.carbs }}</span>
 				<span class="badge">Fat: {{ meal.fat }}</span>
 				<span class="badge">Calories: {{ meal.calories() }}</span>
-				{{ meal.name }}
 			</li>
 		</ul>
 
 		<button
+			class="btn btn-success"
+			*ngIf="!is_new"
+			(click)="is_new = true">
+			New
+		</button>
+		
+		<button
 			type="submit"
 			class="btn btn-success"
-			(click)="addMeal()">
+			[disabled]="!mealForm.valid"
+			(click)="removeMeal()">
 			Add
 		</button>
 
-		<form class="form-horizontal">
+		<form #mealForm="ngForm"
+			class="form-horizontal"
+			*ngIf="is_new">
 
 			<div class="form-group col-md-12">
 				<label
@@ -33,7 +43,7 @@
 					Name
 				</label>
 				<div class="col-md-4">
-					<input
+					<input #name="ngForm"
 						id="name" class="form-control" type="text" required
 						placeholder="ex. Tacos"
 						ngControl="name"
@@ -50,9 +60,10 @@
 					Protein
 				</label>
 				<div class="col-md-4">
-					<input
+					<input #protein="ngForm"
 						id="protein" class="form-control" type="text" required
 						placeholder="0"
+						pattern="[0-9]+"
 						ngControl="protein"
 						[(ngModel)]="new_meal.protein">
 				</div>
@@ -67,7 +78,7 @@
 					Carbs
 				</label>
 				<div class="col-md-4">
-					<input
+					<input #carbs="ngForm"
 						id="carbs" class="form-control" type="text" required
 						placeholder="0"
 						ngControl="carbs"
@@ -84,13 +95,22 @@
 					Fat
 				</label>
 				<div class="col-md-4">
-					<input
+					<input #fat="ngForm"
 						id="fat" class="form-control" type="text" required
 						placeholder="0"
 						ngControl="fat"
 						[(ngModel)]="new_meal.fat">
 				</div>
 			</div>
+
+			<button
+				type="submit"
+				class="btn btn-success"
+				[disabled]="!mealForm.valid"
+				(click)="addMeal()">
+				Add
+			</button>
+
 
 		</form>
 

@@ -13,15 +13,15 @@
         <td colspan="3" title="Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1">Browser: PhantomJS 2.1.1 (Linux 0.0.0)</td>
       </tr>
       <tr class="overview">
-        <td colspan="3">Timestamp: 5/21/2016, 3:58:30 PM</td>
+        <td colspan="3">Timestamp: 5/21/2016, 6:08:46 PM</td>
       </tr>
       <tr>
         <td colspan="3">
-          15 tests / 
+          16 tests / 
           0 errors / 
-          1 failures / 
+          0 failures / 
           0 skipped / 
-          runtime: 0.075s
+          runtime: 0.09s
         </td>
       </tr>
       <tr class="header">
@@ -30,53 +30,23 @@
         <td>Suite / Results</td>
       </tr>
       <tr class="pass">
-        <td>Passed in 0.003s</td>
+        <td>Passed in 0.002s</td>
         <td>should initialize attributes</td>
         <td>DietComponent &raquo; ngOnInit</td>
       </tr>
       <tr class="pass">
-        <td>Passed in 0.002s</td>
+        <td>Passed in 0.001s</td>
         <td>should call service to initialize meal list</td>
         <td>DietComponent &raquo; ngOnInit</td>
       </tr>
-      <tr class="fail">
-        <td>Failed</td>
-        <td>should not call service if fields are blank</td>
-        <td>
-          DietComponent &raquo; addMeal
-          <br />Expected spy addMeal not to have been called.
-stack@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1577:37
-buildExpectationResult@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1547:19
-expectationResultFactory@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:638:40
-addExpectationResult@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:330:58
-addExpectationResult@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:588:41
-/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1501:32
-attemptAsync@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1916:28
-run@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1871:21
-/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1898:19
-/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1842:11
-attemptAsync@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1916:28
-run@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1871:21
-execute@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1859:13
-queueRunnerFactory@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:697:42
-execute@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:359:28
-fn@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:2479:44
-attemptAsync@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1916:28
-run@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1871:21
-execute@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1859:13
-queueRunnerFactory@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:697:42
-fn@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:2464:31
-attemptAsync@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1916:28
-run@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1871:21
-/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1898:19
-/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1842:11
-onComplete@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:2467:21
-
-        </td>
+      <tr class="pass">
+        <td>Passed in 0.002s</td>
+        <td>should call service to add meal</td>
+        <td>DietComponent &raquo; addMeal</td>
       </tr>
       <tr class="pass">
-        <td>Passed in 0.005s</td>
-        <td>should call service to add meal</td>
+        <td>Passed in 0.004s</td>
+        <td>should retrieve the updated list from service</td>
         <td>DietComponent &raquo; addMeal</td>
       </tr>
       <tr class="pass">
@@ -85,22 +55,27 @@ onComplete@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jas
         <td>DietComponent &raquo; addMeal</td>
       </tr>
       <tr class="pass">
-        <td>Passed in 0.004s</td>
+        <td>Passed in 0.005s</td>
+        <td>should set is_new attribute to false</td>
+        <td>DietComponent &raquo; addMeal</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.005s</td>
         <td>should call service to remove last meal</td>
         <td>DietComponent &raquo; removeMeal</td>
       </tr>
       <tr class="pass">
-        <td>Passed in 0.008s</td>
+        <td>Passed in 0.009s</td>
         <td>should initialize the diet data to empty</td>
         <td>DietService &raquo; initialization</td>
       </tr>
       <tr class="pass">
-        <td>Passed in 0.009s</td>
+        <td>Passed in 0.01s</td>
         <td>should return the meal list</td>
         <td>DietService &raquo; getMealList</td>
       </tr>
       <tr class="pass">
-        <td>Passed in 0.009s</td>
+        <td>Passed in 0.008s</td>
         <td>should create a new Meal object and add to diet data array</td>
         <td>DietService &raquo; addMeal</td>
       </tr>
@@ -115,12 +90,12 @@ onComplete@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jas
         <td>DietService &raquo; removeMeal</td>
       </tr>
       <tr class="pass">
-        <td>Passed in 0.006s</td>
+        <td>Passed in 0.016s</td>
         <td>should return the sum of all meal calories in meal list</td>
         <td>DietService &raquo; totalCalories</td>
       </tr>
       <tr class="pass">
-        <td>Passed in 0.004s</td>
+        <td>Passed in 0.005s</td>
         <td>should initialize using arguments when given</td>
         <td>Model: Meal</td>
       </tr>
@@ -133,6 +108,16 @@ onComplete@/home/alec/projects/fitness-tracker/node_modules/jasmine-core/lib/jas
         <td>Passed in 0.004s</td>
         <td>should initialize the title</td>
         <td>AppComponent &raquo; ngOnInit</td>
+      </tr>
+      <tr class="system-out">
+        <td colspan="3"><strong>System output:</strong><br />PhantomJS 2.1.1 (Linux 0.0.0) LOG: []
+<br />PhantomJS 2.1.1 (Linux 0.0.0) LOG: []
+<br />PhantomJS 2.1.1 (Linux 0.0.0) LOG: [Meal{name: 'tacos', protein: 10, carbs: 10, fat: 10}]
+<br />PhantomJS 2.1.1 (Linux 0.0.0) LOG: [Meal{name: 'tacos', protein: 10, carbs: 10, fat: 10}]
+<br />PhantomJS 2.1.1 (Linux 0.0.0) LOG: [Meal{name: 'tacos', protein: 10, carbs: 10, fat: 10}]
+<br />PhantomJS 2.1.1 (Linux 0.0.0) LOG: [Meal{name: 'tacos', protein: 10, carbs: 10, fat: 10}]
+<br />PhantomJS 2.1.1 (Linux 0.0.0) LOG: []
+</td>
       </tr>
     </table>
     <hr/>

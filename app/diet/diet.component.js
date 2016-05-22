@@ -22,10 +22,13 @@ var DietComponent = (function () {
         this.title = "Diet Component";
         this.meal_list = this.dietService.getMealList();
         this.new_meal = new meal_model_1.Meal(null, null, null, null);
+        this.is_new = false;
     };
     DietComponent.prototype.addMeal = function () {
         var new_meal = this.dietService.addMeal(this.new_meal.name, this.new_meal.protein, this.new_meal.carbs, this.new_meal.fat);
         this.new_meal = new meal_model_1.Meal(null, null, null, null);
+        this.is_new = false;
+        this.meal_list = this.dietService.getMealList();
     };
     DietComponent.prototype.removeMeal = function () {
         this.dietService.removeMeal();

@@ -59,19 +59,19 @@ describe("DietComponent", () => {
 
 	describe("addMeal", () => {
 
-		it("should not call service if fields are blank", () => {
-			component.new_meal = new Meal(null, null, null, null);
-			component.addMeal();
-
-			expect(dietServiceMock.addMeal).not.toHaveBeenCalled();
-		});
-		
-
 		it("should call service to add meal", () => {
 			component.new_meal = new Meal("tacos", 10, 10, 10);
 			component.addMeal();
 
 			expect(dietServiceMock.addMeal).toHaveBeenCalled();
+		});
+
+
+		it("should retrieve the updated list from service", () => {
+			component.new_meal = new Meal("tacos", 10, 10, 10);
+			component.addMeal();
+
+			expect(dietServiceMock.getMealList).toHaveBeenCalled();
 		});
 
 
@@ -83,6 +83,14 @@ describe("DietComponent", () => {
 			expect(component.new_meal.protein).toEqual(null);
 			expect(component.new_meal.carbs).toEqual(null);
 			expect(component.new_meal.fat).toEqual(null);
+		});
+
+
+		it("should set is_new attribute to false", () => {
+			component.new_meal = new Meal("tacos", 10, 10, 10);
+			component.addMeal();
+
+			expect(component.is_new).toEqual(false);
 		});
 	});
 
