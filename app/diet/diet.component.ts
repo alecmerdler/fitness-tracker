@@ -48,7 +48,9 @@ export class DietComponent implements OnInit {
 	}
 
 
-	public removeMeal() {
-		this.dietService.removeMeal();
+	public removeMeal(index: number) {
+		this.dietService.removeMeal(index);
+
+		this.meal_list = this.dietService.getMealList();
 	}
 }

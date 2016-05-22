@@ -26,8 +26,8 @@ var DietService = (function () {
         this.meal_list.push(meal);
         return meal;
     };
-    DietService.prototype.removeMeal = function () {
-        this.meal_list.splice(this.meal_list.length - 1, 1);
+    DietService.prototype.removeMeal = function (index) {
+        this.meal_list.splice(index, 1);
     };
     DietService.prototype.totalCalories = function () {
         var total_calories = 0;

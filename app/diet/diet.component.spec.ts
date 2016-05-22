@@ -67,14 +67,6 @@ describe("DietComponent", () => {
 		});
 
 
-		it("should retrieve the updated list from service", () => {
-			component.new_meal = new Meal("tacos", 10, 10, 10);
-			component.addMeal();
-
-			expect(dietServiceMock.getMealList).toHaveBeenCalled();
-		});
-
-
 		it("should reset new meal attribute", () => {
 			component.new_meal = new Meal("tacos", 10, 10, 10);
 			component.addMeal();
@@ -92,16 +84,32 @@ describe("DietComponent", () => {
 
 			expect(component.is_new).toEqual(false);
 		});
+
+
+		it("should retrieve the updated list from service", () => {
+			component.new_meal = new Meal("tacos", 10, 10, 10);
+			component.addMeal();
+
+			expect(dietServiceMock.getMealList).toHaveBeenCalled();
+		});
+
 	});
 
 
 
 	describe("removeMeal", () => {
 
-		it("should call service to remove last meal", () => {
-			component.removeMeal();
+		it("should call service to remove meal at provided index", () => {
+			component.removeMeal(0);
 
 			expect(dietServiceMock.removeMeal).toHaveBeenCalled();
+		});
+
+
+		it("should retrieve the updated list from service", () => {
+			component.removeMeal(0);
+
+			expect(dietServiceMock.getMealList).toHaveBeenCalled();
 		});
 	});
 

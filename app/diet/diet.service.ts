@@ -35,8 +35,8 @@ export class DietService {
 	}
 
 
-	public removeMeal() {
-		this.meal_list.splice(this.meal_list.length - 1, 1);
+	public removeMeal(index: number) {
+		this.meal_list.splice(index, 1);
 	}
 
 

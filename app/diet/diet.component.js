@@ -30,8 +30,9 @@ var DietComponent = (function () {
         this.is_new = false;
         this.meal_list = this.dietService.getMealList();
     };
-    DietComponent.prototype.removeMeal = function () {
-        this.dietService.removeMeal();
+    DietComponent.prototype.removeMeal = function (index) {
+        this.dietService.removeMeal(index);
+        this.meal_list = this.dietService.getMealList();
     };
     DietComponent = __decorate([
         core_1.Component({

@@ -38,13 +38,13 @@ testing_1.describe("DietService", function () {
         });
     });
     testing_1.describe("removeMeal", function () {
-        testing_1.it("should remove the last meal entered", function () {
+        testing_1.it("should remove the meal at the index specified", function () {
             var taco = new meal_model_1.Meal("Tacos", 10, 10, 10);
             var carnitas = new meal_model_1.Meal("Carnitas", 20, 20, 20);
             service.meal_list = [taco, carnitas];
-            service.removeMeal();
+            service.removeMeal(0);
             testing_1.expect(service.meal_list.length).toEqual(1);
-            testing_1.expect(service.meal_list[0]).toEqual(taco);
+            testing_1.expect(service.meal_list[0]).toEqual(carnitas);
         });
     });
     testing_1.describe("totalCalories", function () {

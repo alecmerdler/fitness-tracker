@@ -45,11 +45,6 @@ testing_1.describe("DietComponent", function () {
             component.addMeal();
             testing_1.expect(dietServiceMock.addMeal).toHaveBeenCalled();
         });
-        testing_1.it("should retrieve the updated list from service", function () {
-            component.new_meal = new meal_model_1.Meal("tacos", 10, 10, 10);
-            component.addMeal();
-            testing_1.expect(dietServiceMock.getMealList).toHaveBeenCalled();
-        });
         testing_1.it("should reset new meal attribute", function () {
             component.new_meal = new meal_model_1.Meal("tacos", 10, 10, 10);
             component.addMeal();
@@ -63,11 +58,20 @@ testing_1.describe("DietComponent", function () {
             component.addMeal();
             testing_1.expect(component.is_new).toEqual(false);
         });
+        testing_1.it("should retrieve the updated list from service", function () {
+            component.new_meal = new meal_model_1.Meal("tacos", 10, 10, 10);
+            component.addMeal();
+            testing_1.expect(dietServiceMock.getMealList).toHaveBeenCalled();
+        });
     });
     testing_1.describe("removeMeal", function () {
-        testing_1.it("should call service to remove last meal", function () {
-            component.removeMeal();
+        testing_1.it("should call service to remove meal at provided index", function () {
+            component.removeMeal(0);
             testing_1.expect(dietServiceMock.removeMeal).toHaveBeenCalled();
+        });
+        testing_1.it("should retrieve the updated list from service", function () {
+            component.removeMeal(0);
+            testing_1.expect(dietServiceMock.getMealList).toHaveBeenCalled();
         });
     });
 });

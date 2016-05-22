@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+ <div class="panel panel-default">
 
 	<div class="panel-heading">
 		<h2>{{ title }}</h2>
@@ -23,13 +23,12 @@
 			(click)="is_new = true">
 			New
 		</button>
-		
+
 		<button
-			type="submit"
-			class="btn btn-success"
-			[disabled]="!mealForm.valid"
-			(click)="removeMeal()">
-			Add
+			class="btn btn-danger"
+			*ngIf="!is_new"
+			(click)="removeMeal(0)">
+			Remove Last
 		</button>
 
 		<form #mealForm="ngForm"
@@ -111,6 +110,11 @@
 				Add
 			</button>
 
+			<button
+				class="btn btn-warning"
+				(click)="is_new=false">
+				Cancel
+			</button>
 
 		</form>
 

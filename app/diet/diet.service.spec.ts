@@ -73,14 +73,14 @@ describe("DietService", () => {
 
 	describe("removeMeal", () => {
 
-		it("should remove the last meal entered", () => {
+		it("should remove the meal at the index specified", () => {
 			let taco: Meal = new Meal("Tacos", 10, 10, 10);
 			let carnitas: Meal = new Meal("Carnitas", 20, 20, 20);
 			service.meal_list = [taco, carnitas];
-			service.removeMeal();
+			service.removeMeal(0);
 
 			expect(service.meal_list.length).toEqual(1);
-			expect(service.meal_list[0]).toEqual(taco);
+			expect(service.meal_list[0]).toEqual(carnitas);
 		});
 	});
 
